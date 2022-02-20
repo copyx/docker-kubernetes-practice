@@ -1,0 +1,11 @@
+version: "3"
+services:
+  redis:
+    image: redis
+  app:
+    build:
+      context: .
+    ports:
+      - 50000:5000
+    depends_on:
+      - redis
